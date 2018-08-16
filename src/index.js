@@ -65,8 +65,7 @@ const event = (name, data = {}) => {
 /**
  * Submit a raw query to fbq, for when the wrapper limits user on what they need.
  * This makes it still possible to access the plain Analytics api.
- * @param  {String} appId
- * @param  {object} [data={}]
+ * @param mixed ...args
  */
 const query = (...args) => {
   if (!_fbqEnabled()) return
