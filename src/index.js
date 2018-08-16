@@ -63,6 +63,25 @@ const event = (name, data = {}) => {
 }
 
 /**
+ * Submit a raw query to fbq, for when the wrapper limits user on what they need.
+ * This makes it still possible to access the plain Analytics api.
+ * @param  {String} appId
+ * @param  {object} [data={}]
+ */
+const query = (...args) => {
+  if (!_fbqEnabled()) return
+
+  if (config.debug) {
+    console.groupCollapsed(
+      `[Vue Facebook Pixel] Raw query`)
+    console.log(`With data: `, ...args)
+    console.groupEnd()
+  }
+
+  window.fbq(...args)
+}
+
+/**
  * Vue installer
  * @param  {Vue instance} Vue
  * @param  {Object} [options={}]
@@ -89,8 +108,8 @@ const install = (Vue, options = {}) => {
   // 1. `Vue.analytics.fbq.init()`
   // 2. `this.$analytics.fbq.init()`
 
-  Vue.analytics.fbq = { init, event }
-  Vue.prototype.$analytics.fbq = { init, event }
+  Vue.analytics.fbq = { init, event, query }
+  Vue.prototype.$analytics.fbq = { init, event, query }
 
   // Support for Vue-Router:
   if (router) {
