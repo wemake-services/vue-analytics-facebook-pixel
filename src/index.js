@@ -41,7 +41,7 @@ const init = (appId, data = {}) => {
     )
   }
 
-  window.fbq('init', appId, data)
+  query('init', appId, data)
 }
 
 /**
@@ -59,7 +59,7 @@ const event = (name, data = {}) => {
     console.groupEnd()
   }
 
-  window.fbq('track', name, data)
+  query('track', name, data)
 }
 
 /**
