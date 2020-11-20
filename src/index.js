@@ -11,8 +11,8 @@ let config = {
 
 let standardEvents = [
   'addpaymentinfo', 'addtocart', 'addtowishlist',
-  'completeregistration', 'contact', 'customizeproduct', 
-  'donate', 
+  'completeregistration', 'contact', 'customizeproduct',
+  'donate',
   'findlocation',
   'initiatecheckout',
   'lead',
@@ -71,7 +71,7 @@ const event = (name, data = {}) => {
     console.groupEnd()
   }
 
-  if (!standardEvents.includes(name.toLowerCase())) query('trackCustom', name, data);
+  if (!standardEvents.includes(name.toLowerCase())) query('trackCustom', name, data)
   else query('track', name, data)
 }
 

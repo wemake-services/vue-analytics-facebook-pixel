@@ -1,14 +1,14 @@
 {
-  "name": "vue-analytics-facebook-pixel",
-  "version": "1.0.1",
-  "description": "A small wrapper around Facebook Pixel API",
+  "name": "vue-facebook-pixel",
+  "version": "1.2.1",
+  "description": "A Facebook Pixel API wrapper",
   "author": "sobolevn <mail@sobolevn.me>",
   "private": false,
   "scripts": {
-    "publish-please": "./node_modules/.bin/publish-please",
+    "publish-please": "publish-please",
     "ppublish": "npm run build && publish-please guard && npm run publish-please",
-    "build": "./node_modules/.bin/webpack --config build/webpack.conf.js",
-    "test:security": "./node_modules/.bin/nsp check",
+    "build": "webpack --config build/webpack.conf.js",
+    "test:security": "nsp check",
     "test": "npm run test:security && npm run lint",
     "lint": "eslint --ext .js,.vue src test/unit/specs dev"
   },
@@ -50,9 +50,9 @@
     "vue": "2.0.6",
     "webpack": "^1.13.3"
   },
-  "main": "dist/vue-analytics-facebook-pixel.js",
+  "main": "dist/vue-facebook-pixel.js",
   "repository": {
-    "url": "https://github.com/wemake-services/vue-analytics-facebook-pixel.git",
+    "url": "https://github.com/threadhandler/vue-analytics-facebook-pixel.git",
     "type": "git"
   },
   "keywords": [
@@ -65,5 +65,9 @@
     "wemake.services"
   ],
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {},
+  "bugs": {
+    "url": "https://github.com/threadhandler/vue-analytics-facebook-pixel/issues"
+  },
+  "homepage": "https://github.com/threadhandler/vue-analytics-facebook-pixel#readme"
 }
