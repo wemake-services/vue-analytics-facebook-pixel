@@ -6,7 +6,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    filename: 'vue-analytics-facebook-pixel.js',
+    filename: 'vue-facebook-pixel.js',
     libraryTarget: 'umd'
   },
   eslint: {
