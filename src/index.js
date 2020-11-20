@@ -9,6 +9,18 @@ let config = {
   excludes: []
 }
 
+let standardEvents = [
+  'addpaymentinfo', 'addtocart', 'addtowishlist',
+  'completeregistration', 'contact', 'customizeproduct', 
+  'donate', 
+  'findlocation',
+  'initiatecheckout',
+  'lead',
+  'pageview', 'purchase',
+  'schedule', 'search', 'starttrial', 'submitapplication', 'subscribe',
+  'viewcontent'
+]
+
 // Private functions
 
 const _fbqEnabled = () => {
@@ -59,7 +71,8 @@ const event = (name, data = {}) => {
     console.groupEnd()
   }
 
-  query('track', name, data)
+  if (!standardEvents.includes(name.toLowerCase())) query('trackCustom', name, data);
+  else query('track', name, data)
 }
 
 /**
