@@ -1,5 +1,7 @@
 # vue-analytics-facebook-pixel
 
+**Deprecated, use [alternatives](https://www.npmjs.com/search?q=facebook%20pixel)**
+
 [![npm](https://img.shields.io/npm/v/vue-analytics-facebook-pixel.svg)](https://www.npmjs.com/package/vue-analytics-facebook-pixel)
 
 A small wrapper around fbq. This package integrates Facebook pixel into your `Vue` app.
